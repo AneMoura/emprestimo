@@ -19,9 +19,11 @@ public class EquipamentoController {
     }
 
     @GetMapping
-    public List<Equipamento> listar(@RequestParam(required = false) TipoEquipamento tipo) {
-        return service.listar(tipo);
+    public List<Equipamento> listar(@RequestParam(required = false) TipoEquipamento tipo,
+                                    @RequestParam(required = false) Boolean disponivel) {
+        return service.listar(tipo, disponivel);
     }
+
 
     @GetMapping("/{id}")
     public Equipamento buscar(@PathVariable Long id) {

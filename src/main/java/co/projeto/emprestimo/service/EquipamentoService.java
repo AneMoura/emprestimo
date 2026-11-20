@@ -21,12 +21,19 @@ public class EquipamentoService {
         this.emprestimoRepository = emprestimoRepository;
     }
 
-    public List<Equipamento> listar(TipoEquipamento tipo) {
-        if (tipo == null) {
-            return repository.findAll();
+    public List<Equipamento> listar(TipoEquipamento tipo, Boolean disponivel) {
+        if (tipo != null && disponivel != null) {
+            return repository.findByTipoAndDisponivel(tipo, disponivel);
         }
-        return repository.findByTipo(tipo);
+        if (tipo != null) {
+            return repository.findByTipo(tipo);
+        }
+        if (disponivel != null) {
+            return repository.findByDisponivel(disponivel);
+        }
+        return repository.findAll();
     }
+
 
     public Equipamento buscar(Long id) {
         return repository.findById(id).orElseThrow(() ->
