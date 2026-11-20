@@ -30,7 +30,10 @@ API REST desenvolvida em Java com Spring Boot para controle de equipamentos, pes
 - `GET /emprestimos/{id}` — Busca um empréstimo por ID
 - `POST /emprestimos?equipamentoId=1&colaboradorId=2` — Realiza um novo empréstimo com prazo de 14 dias
 - `PUT /emprestimos/{id}/devolucao` — Registra a devolução de um empréstimo
-
 ## Bônus implementados
 
-Nenhum bônus implementado. O projeto entrega 100% do escopo obrigatório (entidades, rotas, regras de negócio R1 a R10, testes unitários com JUnit 5 e deploy no Render).
+- **Swagger (`springdoc-openapi-starter-webmvc-ui`):** Documentação visual e interativa da API em `/swagger-ui/index.html`.
+- **Actuator (`spring-boot-starter-actuator`):** Monitoramento de saúde da API em `/actuator/health`.
+
+
+
