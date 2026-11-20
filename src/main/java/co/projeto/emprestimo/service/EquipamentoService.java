@@ -43,11 +43,10 @@ public class EquipamentoService {
 
     public Equipamento atualizar(Long id, Equipamento dados) {
         Equipamento existente = buscar(id);
-
-        if (!existente.getPatrimonio().equals(dados.getPatrimonio())
-                && repository.existsByPatrimonio(dados.getPatrimonio())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Patrimônio já cadastrado");
-        }
+        existente.setNome(dados.getNome());
+        existente.setTipo(dados.getTipo());
+        return repository.save(existente);
+    }
 
         existente.setPatrimonio(dados.getPatrimonio());
         existente.setNome(dados.getNome());
