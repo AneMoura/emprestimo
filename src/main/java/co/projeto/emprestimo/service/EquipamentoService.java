@@ -48,20 +48,12 @@ public class EquipamentoService {
         return repository.save(existente);
     }
 
-        existente.setPatrimonio(dados.getPatrimonio());
-        existente.setNome(dados.getNome());
-        existente.setTipo(dados.getTipo());
-        return repository.save(existente);
-    }
-
     public void remover(Long id) {
         Equipamento existente = buscar(id);
-
         if (emprestimoRepository.existsByEquipamentoId(id)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                     "Equipamento já teve empréstimo e não pode ser removido");
         }
-
         repository.delete(existente);
     }
 }
