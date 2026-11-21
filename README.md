@@ -35,5 +35,15 @@ API REST desenvolvida em Java com Spring Boot para controle de equipamentos, pes
 - **Swagger (`springdoc-openapi-starter-webmvc-ui`):** Documentação visual e interativa da API em `/swagger-ui/index.html`.
 - **Actuator (`spring-boot-starter-actuator`):** Monitoramento de saúde da API em `/actuator/health`.
 
+## API em produção (Render)
+
+- **URL base:** https://onrender.com
+- **Swagger UI:** https://onrender.com/swagger-ui/index.html
+
+## Bônus implementados
+
+- **Swagger (`springdoc-openapi-starter-webmvc-ui`):** Documentação visual e interativa da API em `/swagger-ui/index.html`.
+- **Actuator (`spring-boot-starter-actuator`):** Monitoramento de saúde da API em `/actuator/health`.
+- **GitHub Actions (`.github/workflows/ci.yml`):** Execução automática dos testes unitários a cada push no repositório.
 
 
